@@ -6,12 +6,13 @@ arrayOfeResult.length = 9; //create array of 9 empty elements
 var countClick = 0; // to count the number of clicks
 var index = 0; // to get the id of clicked div and use it as index of arrayOfeResult
 var tem = 0;
-var winner; //used to check if there is a winner or not
+var winner=false;; //used to check if there is a winner or not
 var play;
 var xScore = 0;
 var oScore = 0;
 var turn=$("#turn");
 var test;
+
 var xo = $(".box").on("click", function(event) {
   var target = $(event.target);
   tem = parseInt(target.attr("id")); //here I get the index of div to use it as an index with array result
@@ -30,7 +31,7 @@ var xo = $(".box").on("click", function(event) {
       
       offX = true; // to stop player x
       //(target).off("click"); //to prevent player from click on already clicked div
-      arrayOfeResult[index] = 1; //insert 1 to array of result to represent x
+      arrayOfeResult[index] = 1; //insert 1 to the array of result to represent x
       countClick++;
 
       // turn of O player
@@ -63,6 +64,7 @@ var xo = $(".box").on("click", function(event) {
       offX = true; //turn to o
       index = 0;
       result = 0;
+      $('.i').css("visibility","hidden");
     }
 
     //determine different path
@@ -106,7 +108,7 @@ var xo = $(".box").on("click", function(event) {
             winner = true;
             xScore++;
             $("#xScore").text(xScore);
-            
+            $("#play").removeClass("bounce");
             // finishRound();
             break; //from loop
           }
@@ -121,16 +123,19 @@ var xo = $(".box").on("click", function(event) {
             winner = true;
             oScore++;
             $("#oScore").text(oScore);
+            $("#play").removeClass("bounce");
             // finishRound();
             break; //from loop
           }
         }
       }
       // ..... No winner..................
-      if (countClick == 9 && winner != true) {
+      if (countClick > 8 && winner != true) {
         console.log($(".i"));
+        swal("Draw !!", "...Try agin!", {}).then(() => {
+          finishRound();
+        });
         $('.i').css("visibility","visible");
-        swal("Draw !!", "...Try agin!", {});
         console.log("Draw !!");
         // //-----------------------
       }
