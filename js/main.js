@@ -11,7 +11,7 @@ var play;
 var xScore = 0;
 var oScore = 0;
 var turn=$("#turn");
-
+var test;
 var xo = $(".box").on("click", function(event) {
   var target = $(event.target);
   tem = parseInt(target.attr("id")); //here I get the index of div to use it as an index with array result
@@ -126,7 +126,6 @@ var xo = $(".box").on("click", function(event) {
           }
         }
       }
-
       // ..... No winner..................
       if (countClick == 9 && winner != true) {
         console.log($(".i"));
@@ -159,19 +158,3 @@ var xo = $(".box").on("click", function(event) {
 function reset() {
   document.location.href = "";
 }
-
-// function playAgin(){
-// $("#playAgin").on("click", function (event) {
-//   $("#0").css("background-image","none");
-//   $("#1").css("background-image","none");
-//   $("#2").css("background-image","none");
-//   $("#3").css("background-image","none");
-//   $("#4").css("background-image","none");
-//   $("#5").css("background-image","none");
-//   $("#6").css("background-image","none");
-//   $("#7").css("background-image","none");
-//   $("#8").css("background-image","none");
-//   arrayOfeResult = [];
-
-//   });
-// }
