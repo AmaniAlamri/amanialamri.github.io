@@ -105,28 +105,35 @@ visibility: hidden;
   }
 
   .back{
-    position: relative;
-    width: 100%;
+    /* position: relative; */
+    display: flex;
     height: 500px;
-    /* background-size: contain; */
-  }
+    background-image: url("../images/r.png");
+    width: 50%;
+    justify-content:center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 5%;
+    background-size: cover; 
+    
+align-items: flex-end;
+align-content: space-between;
+}
 
 
 .text-block {
-  position: absolute;
-  bottom: 5px;
-  right: 200px;
+  margin-top: 30%;
   background-color:powderblue;
   color:black;
-  width: 75%;
   text-align: center;
+  justify-self: end;
   }
-
+  #playHome{
+  align-self:center;
+  }
   img{
   opacity: 0.5;
   filter: alpha(opacity=50);
-  width: 80%;
-  margin-left: 100px;
+  width: 50%;
   }
-  #playHome{
-  }
+  

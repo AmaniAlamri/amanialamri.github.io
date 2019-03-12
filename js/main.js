@@ -129,10 +129,8 @@ var xo = $(".box").on("click", function(event) {
       // ..... No winner..................
       if (countClick == 9 && winner != true) {
         console.log($(".i"));
-        // $('.i').css("visibility","visible");
-        swal("Draw !!", "...Try agin!", {}).then(() => {
-          finishRound();
-        });
+        $('.i').css("visibility","visible");
+        swal("Draw !!", "...Try agin!", {});
         console.log("Draw !!");
         // //-----------------------
       }
