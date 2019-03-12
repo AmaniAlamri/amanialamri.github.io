@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <!-- link 3w.css -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    />
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+    <title>Tic Toc Tack game</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Welcome Ship of the Desert to Tic Tac Toe Game</h1>
+      <div class="score">
+        
+        <p>X Score :</p><p id="xScore" style="padding-right:50px"></p>
+        <p>O Score :</p><p id="oScore" style="padding-right:50px"></p>
+        <p id="turn"></p>
+
+        
+        
+      </div>
+    </header>
+    <section class="outer">
+      <section id="container" class="w3-container w3-center w3-animate-zoom">
+        <div class="box" id="0"></div>
+        <div class="box" id="1"></div>
+        <div class="box" id="2"></div>
+        <div class="box" id="3"></div>
+        <div class="box" id="4"></div>
+        <div class="box" id="5"></div>
+        <div class="box" id="6"></div>
+        <div class="box" id="7"></div>
+        <div class="box" id="8"></div>
+        <!-- <svg class="svg" version="1.1" id="line_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="250px" xml:space="preserve">
+      <path class="path-vert" fill="#01a09e" stroke-width="3" stroke="#01a09e" d="M30 0 v600 400"/>
+      </svg> -->
+      </section>
+      <div class="i">
+        <img src="images/didYouGitIt.png" alt="Fun" style="width:100%;" />
+      </div>
+    </section>
+    <footer>
+      <button
+        class="w3-btn w3-pale-yellow w3-hover-purple w3-round-xlarge"
+        id="NewGame"
+        onclick="reset()"
+      >Start New Game
+      </button>
+      <button
+        class="animated w3-btn w3-dark-grey w3-hover-purple w3-round-xlarge"
+        id="play">
+        Play Agin
+      </button>
+    </footer>
+
+    <!-- <section>
+        <p> chose your type Player 1:</p>
+        <input type="radio" name="x" id="xPlayer" value="xPlayer">
+        <p> chose your type Player 2:</p>
+        <input type="radio" name="o" id="oPlayer" value="oPlayer">
+    </section> -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

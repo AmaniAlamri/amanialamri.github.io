@@ -1,0 +1,120 @@
+
+body{
+/* background-image: url(../images/background.jpeg); */
+background-size: auto;
+/* background-opacity: 0.5; */
+
+}
+
+header{
+    display: flex;
+    margin-top: 5%;
+margin-bottom: 40px;
+justify-content: center; 
+flex-direction: column;
+}
+
+.score{
+  display: flex;
+justify-content: center;
+
+
+}
+p{
+/* align-self: center; */
+}
+.outer{
+  display: flex;
+  flex-flow: wrap;
+  height: 340px;
+  width: 800px;
+  margin: auto; 
+  justify-content: space-between;
+}
+
+h1{
+font-family: "Comic Sans MS", cursive, sans-serif;
+margin-bottom: 20px;
+align-self: center;
+}
+
+#container{
+    display: flex;
+    margin: auto; 
+    margin-left: 180px;
+    background-color: gainsboro;
+    height: 340px;
+    width: 360px;
+    flex-flow: wrap;
+    justify-content: center;
+    position: relative;
+    align-self: center;
+}
+.i {
+background-color: aqua;
+height: 198px;
+width: 190px;
+background-size: contain;
+align-self: flex-end;
+visibility: hidden; 
+
+}
+.svg{
+    display: flex;
+    margin: auto; 
+    background-color: gainsboro;
+    height: 340px;
+    width: 360px;
+    flex-flow: wrap;
+    justify-content: center;
+    justify-items: center;
+    position: absolute;
+}
+
+
+
+.box{
+    background-color: powderblue;
+    width: 100px;
+    height: 100px;
+    margin: 4px;
+}
+/* short hand property one line */
+/* use hyphen - between name */
+
+.path-vert {
+    stroke-dasharray: 1000;
+  /*   stroke-dashoffset: 800; */
+    animation: draw1 5s linear alternate;
+    position: absolute;
+
+  }
+  
+  @keyframes draw1 {
+    from {
+      stroke-dashoffset: 1200;
+    }
+    to {
+      stroke-dashoffset: 600;
+    }
+  }
+
+  footer{
+    margin-left: 450px;
+    margin-top: 20px;
+  }
+
+  #back{
+    position: absolute;
+    width: 100%;
+  }
+
+  #front{
+    position: absolute;
+    width: 100%;
+  }
+  img{
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  width: 100%;
+  }
