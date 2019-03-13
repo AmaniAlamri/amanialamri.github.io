@@ -55,17 +55,6 @@ var xo = $(".box").on("click", function(event) {
       turn.text("Start Game");
     });
 
-    function finishRound() {
-      $("#play").addClass("bounce");
-      arrayOfeResult = [];
-      countClick = 0;
-      offX = true; //turn to o
-      index = 0;
-      result = 0;
-      winner = false;
-      turn.text("Game Over");
-    }
-
     //determine different path
     if (countClick > 4) {
       // this mean the player 1 reach the point 'click 5' that may consider as a win click
@@ -86,8 +75,9 @@ var xo = $(".box").on("click", function(event) {
 
       for (var i = 1; i <= 8; i++) {
         var result = eval(`path${i}`); // trying to evaluates or executes an argument.
-                                        //result is the value of path 0,3 ,or NaN 
-        if (!isNaN(result)) {           // 3 means x-winner , 0 means o-winner 
+        //result is the value of path 0,3 ,or NaN
+        if (!isNaN(result)) {
+          // 3 means x-winner , 0 means o-winner
           if (result == 3) {
             swal("Good job!", " X winner!", "success", {
               button: "Aww yiss!"
@@ -117,12 +107,11 @@ var xo = $(".box").on("click", function(event) {
       }
       // ..... No winner..................
       if (countClick == 9 && winner != true) {
-        swal(
-          {
-           title: "Draw !!", 
-           text:"...Try agin!",
-           icon:"" 
-          }).then(() => {
+        swal({
+          title: "Draw !!",
+          text: "...Try agin!",
+          icon: ""
+        }).then(() => {
           finishRound();
         });
         $("#play").removeClass("bounce");
@@ -140,6 +129,17 @@ var xo = $(".box").on("click", function(event) {
 // 5- how to create an array that match user x,o seq correctly
 // 6- how to move from div id to another div id
 // 7- how to stop play on win case
+
+function finishRound() {
+  $("#play").addClass("bounce");
+  arrayOfeResult = [];
+  countClick = 0;
+  offX = true; //turn to o
+  index = 0;
+  result = 0;
+  winner = false;
+  turn.text("Game Over");
+}
 
 //start new game
 function reset() {
