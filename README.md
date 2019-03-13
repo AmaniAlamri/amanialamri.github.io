@@ -4,7 +4,7 @@ Simple tic tac toe game created with Javascript
 ## Table of Contents 
 * [Introdction](#Introdction)
 * [Technologies](#technologies)
-* [Approach] (#approach)
+* [Approach](#approach)
 * [Launch](#launch)
 
 
@@ -20,7 +20,6 @@ Project is created with:
 * Animate.css 3.7.0
 * Jquery 3.3.1
 * Sweetalert 2.0
-
 
 ## Approach
 1. Create the html page as prototype and start work on javascript.
