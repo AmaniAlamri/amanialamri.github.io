@@ -26,7 +26,6 @@ var xo = $(".box").on("click", function(event) {
       });
 
       offX = true; // to stop player x
-      //(target).off("click"); //to prevent player from click on already clicked div
       arrayOfeResult[index] = 1; //insert 1 to the array of result to represent x
       countClick++;
       console.log(countClick);
@@ -40,7 +39,6 @@ var xo = $(".box").on("click", function(event) {
       });
 
       offX = false; //to allow plater x
-      //(target).off("click"); //to prevent player from click on already clicked div
       arrayOfeResult[index] = 0; ////insert 0 to array of result to represent 0
       countClick++;
       console.log(countClick);
@@ -88,8 +86,8 @@ var xo = $(".box").on("click", function(event) {
 
       for (var i = 1; i <= 8; i++) {
         var result = eval(`path${i}`); // trying to evaluates or executes an argument.
-
-        if (!isNaN(result)) {
+                                        //result is the value of path 0,3 ,or NaN 
+        if (!isNaN(result)) {           // 3 means x-winner , 0 means o-winner 
           if (result == 3) {
             swal("Good job!", " X winner!", "success", {
               button: "Aww yiss!"
@@ -100,7 +98,6 @@ var xo = $(".box").on("click", function(event) {
             xScore++;
             $("#xScore").text(xScore);
             $("#play").removeClass("bounce");
-            // finishRound();
             break; //from loop
           }
           if (result == 0) {
@@ -114,7 +111,6 @@ var xo = $(".box").on("click", function(event) {
             oScore++;
             $("#oScore").text(oScore);
             $("#play").removeClass("bounce");
-            // finishRound();
             break; //from loop
           }
         }
