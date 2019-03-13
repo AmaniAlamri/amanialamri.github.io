@@ -21,7 +21,7 @@ var xo = $(".box").on("click", function(event) {
     if (offX != true) {
       turn.text("O turn");
       target.css({
-        "background-image": "url('images/a.png')",
+        "background-image": "url('images/x.png')",
         "background-size": "contain"
       });
 
