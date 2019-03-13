@@ -1,46 +1,52 @@
 console.log("Linked to js file correct");
 
-var offX = false;//to make sure the player x is whom the first
-var arrayOfeResult = [];//create array 
+var offX = false; //to make sure the player x is whom the first
+var arrayOfeResult = []; //create array
 arrayOfeResult.length = 9; // 9 empty elements
 var countClick = 0; // to count the number of clicks
 var index = 0; // to get the id of clicked div and use it as index of arrayOfeResult
-var tem = 0;// temporary storage to capture the id of clicked div
+var tem = 0; // temporary storage to capture the id of clicked div
 var winner = false; //used to check if there is a winner or not
-var xScore = 0;//count the score of x player
-var oScore = 0;//count the score of o player
-var turn = $("#turn");//to assign turn of each player
+var xScore = 0; //count the score of x player
+var oScore = 0; //count the score of o player
+var turn = $("#turn"); //to assign turn of each player
 
-var xo = $(".box").on("click", function(event) {//select clicked div 
+var xo = $(".box").on("click", function(event) {
+  //select clicked div
   var target = $(event.target);
   tem = parseInt(target.attr("id")); //get the index of div to use it as an index with arrayOfResult
   index = tem;
   tem = 0;
 
-  if (target.css("background-image") == "none") {//if div empty
-    if (offX != true) {//if turn of player x 
-      turn.text("O turn");//after palyer x played, the next turn is player o
-      target.css({//display x image on the game board
-        "background-image": "url('images/x.png')",
-        "background-size": "contain"
+  if (target.css("background-image") == "none") {
+    //if div empty
+    if (offX != true) {
+      //if turn of player x
+      turn.text("O turn"); //after palyer x played, the next turn is player o
+      target.css({
+        //display x image on the game board
+        "background-image": "url('images/f(x).png')",
+        "background-size": "100px 100px",
       });
       offX = true; // to stop player x from play
       arrayOfeResult[index] = 1; //insert 1 to the array of result to represent x
-      countClick++;//increase number of each click
-
-    } else {// turn of O player
-      turn.text("X turn");//display the next turn is x after o play
-      target.css({//display image of o
-        "background-image": "url('images/o.png')",
-        "background-size": "contain"
+      countClick++; //increase number of each click
+    } else {
+      // turn of O player
+      turn.text("X turn"); //display the next turn is x after o play
+      target.css({
+        //display image of o
+        "background-image": "url('images/f(o).png')",
+        "background-size": "100px 100px"
+        // "background-repeat": "no-repeat"
       });
 
       offX = false; //to allow player x to play
       arrayOfeResult[index] = 0; ////insert 0 to array of result to represent 0
-      countClick++;//increase number of each click
+      countClick++; //increase number of each click
     }
 
-    //play again state: empty every thing 
+    //play again state: empty every thing
     $("#play").on("click", function() {
       $(".box").css("background-image", "none");
       arrayOfeResult = [];
@@ -48,7 +54,7 @@ var xo = $(".box").on("click", function(event) {//select clicked div
       offX = true; //turn to o
       index = 0;
       result = 0;
-      winner = false;//there is no winner 
+      winner = false; //there is no winner
       turn.text("Start Game");
     });
 
@@ -76,27 +82,29 @@ var xo = $(".box").on("click", function(event) {//select clicked div
         if (!isNaN(result)) {
           // 3 means x-winner , 0 means o-winner
           if (result == 3) {
-            swal("Good job!", " X winner!", "success", {//display alert window
+            swal("Good job!", " F(x) winner!", "success", { //display alert window
               button: "Aww yiss!"
             }).then(() => {
-              finishRound();//call finish round function
+              finishRound(); //call finish round function
             });
-            winner = true;//there is winner now
-            xScore++;//increase x score
-            $("#xScore").text(xScore);//display x score 
-            $("#play").removeClass("bounce");//remove animation from play again button
+            winner = true; //there is winner now
+            xScore++; //increase x score
+            $("#xScore").text(xScore); //display x score
+            $("#play").removeClass("bounce"); //remove animation from play again button
             break; //from loop
           }
-          if (result == 0) {// o is winner
+          if (result == 0) {
+            // o is winner
             stopPlay = true;
-            swal("Good job!", "O winner!", "success", {//display alert window
+            swal("Good job!", "F (O) winner!", "success", {
+              //display alert window
               button: "Aww yiss!"
             }).then(() => {
-              finishRound();//call finish round function
+              finishRound(); //call finish round function
             });
-            winner = true;//there is winner now
-            oScore++;//increase o score
-            $("#oScore").text(oScore);//display o score 
+            winner = true; //there is winner now
+            oScore++; //increase o score
+            $("#oScore").text(oScore); //display o score
             $("#play").removeClass("bounce");
             break; //from loop
           }
@@ -105,14 +113,13 @@ var xo = $(".box").on("click", function(event) {//select clicked div
       // ......... No winner..................
       if (countClick == 9 && winner != true) {
         swal({
-          title: "Draw !!",
-          text: "...Try agin!",
-          icon: ""
+          title: "Not F(X), Not F(O) !!",
+          text: "...Try again!",
+          icon: "images/didYouGitIt.png"
         }).then(() => {
           finishRound();
         });
         $("#play").removeClass("bounce");
-        // //-----------------------
       }
     } //close (if click>4)
   }
